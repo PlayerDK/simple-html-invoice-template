@@ -1,213 +1,120 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
-    
-    <style>
-    .invoice-box {
-        max-width: 800px;
-        margin: auto;
-        padding: 30px;
-        border: 1px solid #eee;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-        font-size: 16px;
-        line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        color: #555;
-    }
-    
-    .invoice-box table {
-        width: 100%;
-        line-height: inherit;
-        text-align: left;
-    }
-    
-    .invoice-box table td {
-        padding: 5px;
-        vertical-align: top;
-    }
-    
-    .invoice-box table tr td:nth-child(2) {
-        text-align: right;
-    }
-    
-    .invoice-box table tr.top table td {
-        padding-bottom: 20px;
-    }
-    
-    .invoice-box table tr.top table td.title {
-        font-size: 45px;
-        line-height: 45px;
-        color: #333;
-    }
-    
-    .invoice-box table tr.information table td {
-        padding-bottom: 40px;
-    }
-    
-    .invoice-box table tr.heading td {
-        background: #eee;
-        border-bottom: 1px solid #ddd;
-        font-weight: bold;
-    }
-    
-    .invoice-box table tr.details td {
-        padding-bottom: 20px;
-    }
-    
-    .invoice-box table tr.item td{
-        border-bottom: 1px solid #eee;
-    }
-    
-    .invoice-box table tr.item.last td {
-        border-bottom: none;
-    }
-    
-    .invoice-box table tr.total td:nth-child(2) {
-        border-top: 2px solid #eee;
-        font-weight: bold;
-    }
-    
-    @media only screen and (max-width: 600px) {
-        .invoice-box table tr.top table td {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
-        
-        .invoice-box table tr.information table td {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
-    }
-    
-    /** RTL **/
-    .rtl {
-        direction: rtl;
-        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-    }
-    
-    .rtl table {
-        text-align: right;
-    }
-    
-    .rtl table tr td:nth-child(2) {
-        text-align: left;
-    }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice #123</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="invoice-box">
-        <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;">
-                            </td>
-                            
-                            <td>
-                                Invoice #: 123<br>
-                                Created: January 1, 2015<br>
-                                Due: February 1, 2015
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                Sparksuite, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, CA 12345
-                            </td>
-                            
-                            <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="heading">
-                <td>
-                    Payment Method
-                </td>
-                
-                <td>
-                    Check #
-                </td>
-            </tr>
-            
-            <tr class="details">
-                <td>
-                    Check
-                </td>
-                
-                <td>
-                    1000
-                </td>
-            </tr>
-            
-            <tr class="heading">
-                <td>
-                    Item
-                </td>
-                
-                <td>
-                    Price
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Website design
-                </td>
-                
-                <td>
-                    $300.00
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Hosting (3 months)
-                </td>
-                
-                <td>
-                    $75.00
-                </td>
-            </tr>
-            
-            <tr class="item last">
-                <td>
-                    Domain name (1 year)
-                </td>
-                
-                <td>
-                    $10.00
-                </td>
-            </tr>
-            
-            <tr class="total">
-                <td></td>
-                
-                <td>
-                   Total: $385.00
-                </td>
-            </tr>
-        </table>
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="max-w-3xl mx-auto my-10 bg-white rounded-2xl shadow-lg overflow-hidden">
+
+        <!-- Header -->
+        <div class="bg-indigo-600 px-10 py-8 flex items-center justify-between">
+            <div>
+                <h1 class="text-white text-3xl font-bold tracking-tight">INVOICE</h1>
+                <p class="text-indigo-200 text-sm mt-1">#INV-0123</p>
+            </div>
+            <div class="text-right text-sm text-indigo-100 leading-relaxed">
+                <p>Issued: January 1, 2025</p>
+                <p>Due: February 1, 2025</p>
+            </div>
+        </div>
+
+        <!-- From / To -->
+        <div class="px-10 py-8 grid grid-cols-2 gap-8 border-b border-gray-100">
+            <div>
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">From</h2>
+                <p class="text-gray-800 font-semibold">Sparksuite, Inc.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    12345 Sunny Road<br>
+                    Sunnyville, CA 12345
+                </p>
+            </div>
+            <div class="text-right">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Bill To</h2>
+                <p class="text-gray-800 font-semibold">Acme Corp.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    John Doe<br>
+                    john@example.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="px-10 py-5 bg-gray-50 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Payment Method</p>
+                        <p class="text-gray-700 text-sm font-medium">Check</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Check #</p>
+                    <p class="text-gray-700 text-sm font-medium">1000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <div class="px-10 py-6">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-gray-200">
+                        <th class="text-left py-3 text-xs font-semibold uppercase tracking-wider text-gray-400">Item</th>
+                        <th class="text-right py-3 text-xs font-semibold uppercase tracking-wider text-gray-400">Price</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr class="border-b border-gray-100">
+                        <td class="py-4">Website design</td>
+                        <td class="py-4 text-right">$300.00</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="py-4">Hosting (3 months)</td>
+                        <td class="py-4 text-right">$75.00</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="py-4">Domain name (1 year)</td>
+                        <td class="py-4 text-right">$10.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Total -->
+        <div class="px-10 pb-8">
+            <div class="flex justify-end">
+                <div class="w-64">
+                    <div class="flex justify-between py-2 text-sm text-gray-500">
+                        <span>Subtotal</span>
+                        <span>$385.00</span>
+                    </div>
+                    <div class="flex justify-between py-2 text-sm text-gray-500">
+                        <span>Tax (0%)</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="flex justify-between pt-3 mt-2 border-t-2 border-indigo-600 text-lg font-bold text-gray-800">
+                        <span>Total</span>
+                        <span>$385.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-50 px-10 py-6 text-center text-xs text-gray-400 border-t border-gray-100">
+            <p>Thank you for your business!</p>
+            <p class="mt-1">Payment is due within 30 days. Please include the invoice number on your check.</p>
+        </div>
+
     </div>
 </body>
 </html>
